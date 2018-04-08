@@ -37,7 +37,7 @@
                 <input
                   ref="input"
                   type="text"
-                  placeholder="Slugline/Scene heading"
+                  placeholder="Slugline/Scene Heading"
                   class="input"
                   @keyup.enter="onSubmit"
                 >
