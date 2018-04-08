@@ -1,0 +1,46 @@
+[
+  {
+    "title": "JSON Files"
+  },
+  {
+    "type": "slugline",
+    "content": {
+      "position": "Ext.",
+      "location": "Writers Store",
+      "time": "Day"
+    }
+  },
+  {
+    "type": "action",
+    "content": "In the heart of West Los Angeles, a boutique shop's large OPEN sign glows like a beacon."
+  },
+  {
+    "type": "transition",
+    "content": "Dissolve to"
+  },
+  {
+    "type": "slugline",
+    "content": {
+      "position": "Int.",
+      "location": "Writers Store, Sales Floor",
+      "time": "Day"
+    }
+  },
+  {
+    "type": "action",
+    "content": "Writers browse the many scripts in the screenplay section."
+  },
+  {
+    "type": "action",
+    "content": "Anthony, Canadian-Italian Story Specialist extraordinaire, 30s and not getting any younger, ambles over."
+  },
+  {
+    "type": "dialogue",
+    "content": {
+      "character": "Anthony",
+      "extention": "",
+      "paranthetical" :"",
+      "speech": "Hey, how's everyone doin' here?"
+    }
+  }
+]
