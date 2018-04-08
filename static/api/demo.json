@@ -50,5 +50,29 @@
       "paranthetical" :"",
       "speech": "Hey, how's everyone doin' here?"
     }
+  },
+  {
+    "type": "dialogue",
+    "content": {
+      "character": "Crio",
+      "extention": "O.S.",
+      "paranthetical" :"Monotone",
+      "speech": "Just catching my breath... Everytime we it a little closer."
+    }
+  },
+  {
+    "type": "dialogue",
+    "content": {
+      "character": "Anthony",
+      "extention": "",
+      "paranthetical" :"",
+      "speech": "I know it's risky running missions back to back like this, but the faster we move the better chance we have of stopping them."
+    }
+  },
+  {
+    "type": "action",
+    "content": {
+      "body": "Kareem senses something like a jolt. He pauses, then regains composure."
+    }
   }
 ]
