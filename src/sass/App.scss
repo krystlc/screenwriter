@@ -1,0 +1,25 @@
+.content {
+  font-family: 'Cutive Mono', monospace;
+  padding: 3rem;
+
+  h6 {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  blockquote {
+    margin: 1.25rem 20%;
+  }
+}
+
+@media only screen {
+  main {
+    width: 50%;
+  }
+  .hero {
+    top: 0;
+    right: 0;
+    width: 50%;
+    position: fixed;
+    background-color: #eee;
+  }
+}

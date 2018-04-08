@@ -17,8 +17,10 @@
     }
   },
   {
-    "type": "transition",
-    "content": "Dissolve to"
+    "type": "scene-transition",
+    "content": {
+      "body": "Dissolve to"
+    }
   },
   {
     "type": "slugline",
