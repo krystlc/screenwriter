@@ -3,8 +3,8 @@
     <main class="content">
       <h1 class="title has-text-centered">{{ title }}</h1>
       <h6>Fade in:</h6>
-      <template v-for="(field, i) in script">
-        <component :is="field.type" :key="i" :content="field.content"></component>
+      <template v-for="(field, index) in script">
+        <component :is="field.type" :key="index" :content="field.content" @click.native="deleteField(index)"></component>
       </template>
     </main>
     <section class="hero is-fullheight">
@@ -13,11 +13,19 @@
           <h1 class="title">Screenwriter</h1>
           <h2 class="subtitle">A bad hombre project</h2>
           <form @submit.prevent="onSubmit">
-            <div>
-              <button v-shortkey.once="['s']" @shortkey="input.type = 'slugline'" class="button is-small" disabled>(s) Slugline</button>
-              <button v-shortkey.once="['a']" @shortkey="input.type = 'action'" class="button is-small" disabled>(a) Action</button>
-              <button v-shortkey.once="['d']" @shortkey="input.type = 'dialogue'" class="button is-small" disabled>(d) Dialogue</button>
-              <button v-shortkey.once="['t']" @shortkey="input.type = 'transition'" class="button is-small" disabled>(t) Transition</button>
+            <div class="field has-addons">
+              <div class="control">
+                <button class="button" v-shortkey.once="['s']" @shortkey="loadForm('slugline')" @click.prevent="loadForm('slugline')">(s)lugline</button>
+              </div>
+              <div class="control">
+                <button v-shortkey.once="['a']" @shortkey="input.type = 'action'" class="button" @click.prevent="test">(a)ction</button>
+              </div>
+              <div class="control">
+                <button v-shortkey.once="['d']" @shortkey="input.type = 'dialogue'" class="button" @click.prevent="test">(d)ialogue</button>
+              </div>
+              <div class="control">
+                <button v-shortkey.once="['t']" @shortkey="input.type = 'scene-transition'" class="button" @click.prevent="test">(t)ransition</button>
+              </div>
             </div>
             <div>
               <!-- SLUGLINE FIELDS -->
@@ -110,7 +118,7 @@
                 </div>
               </div>
               <!-- TRANSITION FIELDS -->
-              <div v-if="input.type === 'transition'">
+              <div v-if="input.type === 'scene-transition'">
                 <input
                   ref="input"
                   type="text"
@@ -157,6 +165,19 @@ export default {
     },
     test () {
       console.log('hi')
+    },
+    loadForm (fieldType) {
+      switch (fieldType) {
+        case 'slugline':
+          console.log('you made it here')
+          this.input.type = fieldType
+          break
+        default:
+          console.log('too bad')
+      }
+    },
+    deleteField (index) {
+      this.script.splice(index, 1)
     }
   }
 }

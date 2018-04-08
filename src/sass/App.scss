@@ -7,7 +7,15 @@
     text-transform: uppercase;
   }
   blockquote {
-    margin: 1.25rem 20%;
+    margin-left: 10%;
+    margin-right: 10%;
+
+    header {
+      margin-bottom: 0.5rem;
+    }
+    h6 {
+      margin-bottom: 0;
+    }
   }
 }
 
