@@ -8,7 +8,7 @@
           {{ field.content.position }} {{ field.content.location }} — {{ field.content.time }}
         </h6>
         <p v-if="field.type === 'action'" class="action">
-          {{ field.content }}
+          {{ field.content.body }}
         </p>
         <blockquote v-if="field.type === 'dialogue'">
           <h6 class="has-text-centered">{{ field.content.character }} <span v-if="field.content.extention">({{ field.content.extention }})</span></h6>
@@ -33,14 +33,19 @@
               <button v-shortkey.once="['t']" @shortkey="input.type = 'transition'" class="button" disabled>(t) Transition</button>
             </div>
             <div>
-              <div v-if="input.type === 'slugline'">
-                <input
-                  ref="input"
-                  type="text"
-                  placeholder="Slugline/Scene Heading"
-                  class="input"
-                  @keyup.enter="onSubmit"
-                >
+              <div v-if="input.type === 'slugline'" class="field has-addons">
+                <div class="control is-expanded">
+                  <input
+                    ref="input"
+                    type="text"
+                    placeholder="Slugline/Scene Heading"
+                    class="input"
+                    @keyup.enter="onSubmit"
+                  >
+                </div>
+                <div class="control">
+                  <button class="button is-primary">Submit</button>
+                </div>
               </div>
               <div v-if="input.type === 'action'">
                 <textarea

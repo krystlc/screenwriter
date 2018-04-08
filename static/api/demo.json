@@ -12,7 +12,9 @@
   },
   {
     "type": "action",
-    "content": "In the heart of West Los Angeles, a boutique shop's large OPEN sign glows like a beacon."
+    "content": {
+      "body": "In the heart of West Los Angeles, a boutique shop's large OPEN sign glows like a beacon."
+    }
   },
   {
     "type": "transition",
@@ -28,11 +30,15 @@
   },
   {
     "type": "action",
-    "content": "Writers browse the many scripts in the screenplay section."
+    "content": {
+      "body": "Writers browse the many scripts in the screenplay section."
+    }
   },
   {
     "type": "action",
-    "content": "Anthony, Canadian-Italian Story Specialist extraordinaire, 30s and not getting any younger, ambles over."
+    "content": {
+      "body": "Anthony, Canadian-Italian Story Specialist extraordinaire, 30s and not getting any younger, ambles over."
+    }
   },
   {
     "type": "dialogue",
