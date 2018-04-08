@@ -1,0 +1,11 @@
+<template>
+  <div>
+    <input
+      ref="input"
+      type="text"
+      placeholder="Transition"
+      class="input"
+      @keyup.enter="onSubmit"
+    >
+  </div>
+</template>
