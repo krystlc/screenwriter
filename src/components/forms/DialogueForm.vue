@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <form @submit.prevent="sendFields">
     <div class="field has-addons">
       <div class="control is-expanded">
         <input
@@ -45,7 +45,7 @@
         >Submit</button>
       </div>
     </div>
-  </div>
+  </form>
 </template>
 
 <script>

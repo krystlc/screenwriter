@@ -1,39 +1,45 @@
 <template>
-  <div class="field has-addons">
-    <div class="control is-expanded">
-      <input
-        ref="input"
-        type="text"
-        placeholder="Transition"
-        class="input"
-        v-model="body"
-        @keyup.enter="sendFields"
-      >
+  <form @submit.prevent="sendFields">
+    <div class="field has-addons">
+      <div class="control is-expanded">
+        <input
+          ref="input"
+          type="text"
+          placeholder="Transition"
+          class="input"
+          v-model="body"
+          @keyup.enter="console.log('wtf?')"
+        >
+      </div>
+      <div class="control">
+        <button
+          class="button is-primary"
+          @click.prevent="sendFields"
+        >Submit</button>
+      </div>
     </div>
-    <div class="control">
-      <button
-        class="button is-primary"
-        @click.prevent="sendFields"
-      >Submit</button>
-    </div>
-  </div>
+  </form>
 </template>
 
 <script>
 export default {
   data () {
     return {
-      body: ''
+      body: null
     }
   },
   methods: {
     sendFields () {
-      this.$emit('sendFields', {
-        type: 'scene-transition',
-        content: {
-          body: this.body
-        }
-      })
+      if (this.body) {
+        this.$emit('sendFields', {
+          type: 'scene-transition',
+          content: {
+            body: this.body
+          }
+        })
+      } else {
+        console.log(this.body, 'nothing to see here')
+      }
     }
   },
   mounted () {

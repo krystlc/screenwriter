@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <form @submit.prevent="sendFields">
     <div class="field">
       <div class="control">
         <textarea
@@ -19,7 +19,7 @@
       >Submit</button>
       </div>
     </div>
-  </div>
+  </form>
 </template>
 
 <script>

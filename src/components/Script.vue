@@ -12,7 +12,6 @@
         <div class="container">
           <h1 class="title">Screenwriter</h1>
           <h2 class="subtitle">A bad hombre project</h2>
-          <form @submit.prevent="onSubmit">
             <div class="field has-addons">
               <div class="control">
                 <button class="button" v-shortkey.once="['s']" @shortkey="loadForm('slugline')" @click.prevent="loadForm('slugline')">(s)lugline</button>
@@ -27,10 +26,7 @@
                 <button v-shortkey.once="['t']" @shortkey="loadForm('scene-transition')" class="button" @click.prevent="loadForm('scene-transition')">(t)ransition</button>
               </div>
             </div>
-            <div>
-              <component :is="input.type" @sendFields="onSubmit"></component>
-            </div>
-          </form>
+            <component :is="input.type" @sendFields="onSubmit"></component>
         </div>
       </div>
     </section>
@@ -64,10 +60,8 @@ export default {
   },
   methods: {
     onSubmit (fields) {
-      console.log(fields)
       this.script.push(fields)
-      this.input.type = ''
-      console.log(this.script)
+      this.input.type = null
     },
     loadForm (fieldType) {
       this.input.type = fieldType + '-form'
@@ -75,6 +69,9 @@ export default {
     deleteField (index) {
       this.script.splice(index, 1)
     }
+  },
+  updated () {
+    document.getElementById(`el-${this.script.length - 1}`).scrollIntoView()
   }
 }
 </script>
