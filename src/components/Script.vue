@@ -4,7 +4,7 @@
       <h1 class="title has-text-centered">{{ title }}</h1>
       <h6>Fade in:</h6>
       <template v-for="(field, index) in script">
-        <component :is="field.type" :key="index" :content="field.content" @click.native="deleteField(index)"></component>
+        <component :is="field.type" :key="index" :content="field.content" @click.native="deleteField(index)" :id="`el-${index}`"></component>
       </template>
     </main>
     <section class="hero is-fullheight">
@@ -28,7 +28,7 @@
               </div>
             </div>
             <div>
-              <component :is="input.type"></component>
+              <component :is="input.type" @sendFields="onSubmit"></component>
             </div>
           </form>
         </div>
@@ -63,14 +63,11 @@ export default {
     }
   },
   methods: {
-    onSubmit () {
-      const payload = Object
-      this.script.push({
-        type: this.input.type,
-        content: payload
-      })
-      this.$refs.input.value = ''
+    onSubmit (fields) {
+      console.log(fields)
+      this.script.push(fields)
       this.input.type = ''
+      console.log(this.script)
     },
     loadForm (fieldType) {
       this.input.type = fieldType + '-form'

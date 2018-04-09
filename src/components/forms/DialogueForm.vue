@@ -1,40 +1,78 @@
 <template>
   <div>
     <div class="field has-addons">
+      <div class="control is-expanded">
+        <input
+          type="text"
+          ref="input"
+          placeholder="Character name"
+          class="input"
+          v-model="character"
+        >
+      </div>
       <div class="control">
         <input
-          ref="input"
           type="text"
           placeholder="Extention"
           class="input"
+          v-model="extention"
         >
       </div>
       <div class="control">
         <input
-          ref="input"
           type="text"
-          placeholder="Character name"
+          placeholder="Paranthetical"
           class="input"
-        >
-      </div>
-      <div class="control is-expanded">
-        <input
-          ref="input"
-          type="text"
-          placeholder="Parenthetical"
-          class="input"
+          v-model="paranthetical"
         >
       </div>
     </div>
     <div class="field">
       <div class="control">
         <textarea
-          ref="input"
           class="textarea"
           placeholder="Lines"
-          @keyup.ctrl.enter="onSubmit"
+          v-model="speech"
+          @keyup.ctrl.enter="sendFields"
         ></textarea>
+      </div>
+    </div>
+    <div class="field">
+      <div class="control">
+        <button
+          class="button is-primary"
+          @click.prevent="sendFields"
+        >Submit</button>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      extention: '',
+      character: '',
+      paranthetical: '',
+      speech: ''
+    }
+  },
+  methods: {
+    sendFields () {
+      this.$emit('sendFields', {
+        type: 'dialogue',
+        content: {
+          extention: this.extention,
+          character: this.character,
+          paranthetical: this.paranthetical,
+          speech: this.speech
+        }
+      })
+    }
+  },
+  mounted () {
+    this.$refs.input.focus()
+  }
+}
+</script>
