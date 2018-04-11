@@ -31,7 +31,7 @@
       <div class="control">
         <button
           class="button is-primary"
-        >Submit</button>
+        >Ctrl+Enter</button>
       </div>
     </div>
   </form>
@@ -39,6 +39,7 @@
 
 <script>
 export default {
+  props: ['handleContent'],
   data () {
     return {
       position: '',
@@ -49,8 +50,8 @@ export default {
   methods: {
     sendFields () {
       this.$emit('sendFields', {
-        type: 'slugline',
-        content: {
+        element: 'slugline',
+        fields: {
           position: this.position,
           location: this.location,
           time: this.time
@@ -60,6 +61,11 @@ export default {
   },
   mounted () {
     this.$refs.input.focus()
+    if (this.handleContent) {
+      this.position = this.handleContent.content.position
+      this.location = this.handleContent.content.location
+      this.time = this.handleContent.content.time
+    }
   }
 }
 </script>

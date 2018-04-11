@@ -15,7 +15,7 @@
         <button
           class="button is-primary"
           @click.prevent="sendFields"
-        >Submit</button>
+        >Ctrl+Enter</button>
       </div>
     </div>
   </form>
@@ -32,9 +32,9 @@ export default {
     sendFields () {
       if (this.body) {
         this.$emit('sendFields', {
-          type: 'scene-transition',
-          content: {
-            body: this.body
+          element: 'scene-transition',
+          fields: {
+            transition: this.body
           }
         })
       } else {

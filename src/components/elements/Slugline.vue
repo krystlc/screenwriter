@@ -1,9 +1,9 @@
 <template>
-  <h6>{{ content.position }} {{ content.location }} - {{ content.time }}</h6>
+  <h6>{{ fields.position }} {{ fields.location }} - {{ fields.time }}</h6>
 </template>
 
 <script>
 export default {
-  props: ['content']
+  props: ['fields']
 }
 </script>

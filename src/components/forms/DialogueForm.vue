@@ -42,7 +42,7 @@
         <button
           class="button is-primary"
           @click.prevent="sendFields"
-        >Submit</button>
+        >Ctrl+Enter</button>
       </div>
     </div>
   </form>
@@ -61,12 +61,12 @@ export default {
   methods: {
     sendFields () {
       this.$emit('sendFields', {
-        type: 'dialogue',
-        content: {
+        element: 'dialogue',
+        fields: {
           extention: this.extention,
           character: this.character,
           paranthetical: this.paranthetical,
-          speech: this.speech
+          content: this.speech
         }
       })
     }

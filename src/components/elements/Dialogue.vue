@@ -1,15 +1,15 @@
 <template>
   <blockquote>
     <header class="has-text-centered">
-    <h6>{{ content.character}} <span v-if="content.extention.length > 0">({{ content.extention }})</span></h6>
-    <em v-if="content.paranthetical.length > 0">({{ content.paranthetical }})</em>
+    <h6>{{ fields.character}} <span v-if="fields.extention.length > 0">({{ fields.extention }})</span></h6>
+    <em v-if="fields.paranthetical.length > 0">({{ fields.paranthetical }})</em>
     </header>
-    <p>{{ content.speech }}</p>
+    <p>{{ fields.content }}</p>
   </blockquote>
 </template>
 
 <script>
 export default {
-  props: ['content']
+  props: ['fields']
 }
 </script>

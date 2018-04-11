@@ -1,78 +1,84 @@
-[
-  {
-    "title": "JSON Files"
-  },
-  {
-    "type": "slugline",
-    "content": {
-      "position": "Ext.",
-      "location": "Writers Store",
-      "time": "Day"
+{
+  "title": "JSON Files",
+  "script": [
+    {
+      "element": "slugline",
+      "fields": {
+        "position": "Ext.",
+        "location": "Writers Store",
+        "time": "Day"
+      }
+    },
+    {
+      "element": "action",
+      "fields": {
+        "content": "In the heart of West Los Angeles, a boutique shop's large OPEN sign glows like a beacon."
+      }
+    },
+    {
+      "element": "scene-transition",
+      "fields": {
+        "transition": "Dissolve to"
+      }
+    },
+    {
+      "element": "slugline",
+      "fields": {
+        "position": "Int.",
+        "location": "Writers Store, Sales Floor",
+        "time": "Day"
+      }
+    },
+    {
+      "element": "action",
+      "fields": {
+        "content": "Writers browse the many scripts in the screenplay section."
+      }
+    },
+    {
+      "element": "action",
+      "fields": {
+        "content": "Anthony, Canadian-Italian Story Specialist extraordinaire, 30s and not getting any younger, ambles over."
+      }
+    },
+    {
+      "element": "dialogue",
+      "fields": {
+        "character": "Anthony",
+        "extention": "",
+        "paranthetical": "",
+        "content": "Hey, how's everyone doin' here?"
+      }
+    },
+    {
+      "element": "dialogue",
+      "fields": {
+        "character": "Crio",
+        "extention": "O.S.",
+        "paranthetical": "Monotone",
+        "content": "Just catching my breath... Everytime we it a little closer."
+      }
+    },
+    {
+      "element": "dialogue",
+      "fields": {
+        "character": "Anthony",
+        "extention": "",
+        "paranthetical": "",
+        "content": "I know it's risky running missions back to back like this, but the faster we move the better chance we have of stopping them."
+      }
+    },
+    {
+      "element": "action",
+      "fields": {
+        "content": "Kareem senses something like a jolt. He pauses, then regains composure."
+      }
     }
-  },
-  {
-    "type": "action",
-    "content": {
-      "body": "In the heart of West Los Angeles, a boutique shop's large OPEN sign glows like a beacon."
-    }
-  },
-  {
-    "type": "scene-transition",
-    "content": {
-      "body": "Dissolve to"
-    }
-  },
-  {
-    "type": "slugline",
-    "content": {
-      "position": "Int.",
-      "location": "Writers Store, Sales Floor",
-      "time": "Day"
-    }
-  },
-  {
-    "type": "action",
-    "content": {
-      "body": "Writers browse the many scripts in the screenplay section."
-    }
-  },
-  {
-    "type": "action",
-    "content": {
-      "body": "Anthony, Canadian-Italian Story Specialist extraordinaire, 30s and not getting any younger, ambles over."
-    }
-  },
-  {
-    "type": "dialogue",
-    "content": {
-      "character": "Anthony",
-      "extention": "",
-      "paranthetical" :"",
-      "speech": "Hey, how's everyone doin' here?"
-    }
-  },
-  {
-    "type": "dialogue",
-    "content": {
-      "character": "Crio",
-      "extention": "O.S.",
-      "paranthetical" :"Monotone",
-      "speech": "Just catching my breath... Everytime we it a little closer."
-    }
-  },
-  {
-    "type": "dialogue",
-    "content": {
-      "character": "Anthony",
-      "extention": "",
-      "paranthetical" :"",
-      "speech": "I know it's risky running missions back to back like this, but the faster we move the better chance we have of stopping them."
-    }
-  },
-  {
-    "type": "action",
-    "content": {
-      "body": "Kareem senses something like a jolt. He pauses, then regains composure."
-    }
-  }
-]
+  ],
+  "characters": [
+    "Anthony"
+  ],
+  "locations": [
+    "Writers Store"
+  ]
+}

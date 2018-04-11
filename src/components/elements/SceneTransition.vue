@@ -1,9 +1,9 @@
 <template>
-  <h6 class="has-text-right">{{ content.body }}:</h6>
+  <h6 class="has-text-right">{{ fields.transition }}:</h6>
 </template>
 
 <script>
 export default {
-  props: ['content']
+  props: ['fields']
 }
 </script>

@@ -16,7 +16,7 @@
       <button
         class="button is-primary"
         @click.prevent="sendFields"
-      >Submit</button>
+      >Ctrl+Enter</button>
       </div>
     </div>
   </form>
@@ -32,9 +32,9 @@ export default {
   methods: {
     sendFields () {
       this.$emit('sendFields', {
-        type: 'action',
-        content: {
-          body: this.body
+        element: 'action',
+        fields: {
+          content: this.body
         }
       })
     }

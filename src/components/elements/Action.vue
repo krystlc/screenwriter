@@ -1,9 +1,9 @@
 <template>
-  <p>{{ content.body }}</p>
+  <p>{{ fields.content }}</p>
 </template>
 
 <script>
 export default {
-  props: ['content']
+  props: ['fields']
 }
 </script>
