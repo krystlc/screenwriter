@@ -20,10 +20,9 @@
 </template>
 
 <script>
-import { Slugline, Action, Dialogue, SceneTransition } from '@/components/elements'
-import { SluglineForm, ActionForm, DialogueForm, SceneTransitionForm } from '@/components/forms'
-import ElementForm from '@/components/forms/ElementForm'
 import DemoScript from '../../static/api/demo.json'
+import { Slugline, Action, Dialogue, SceneTransition } from '@/components/elements'
+import ElementForm from '@/components/forms/ElementForm'
 
 export default {
   components: {
@@ -31,32 +30,16 @@ export default {
     Action,
     Dialogue,
     SceneTransition,
-    SluglineForm,
-    ActionForm,
-    DialogueForm,
-    SceneTransitionForm,
     ElementForm
   },
   data () {
     return {
-      doc: DemoScript,
-      input: {
-        type: ''
-      }
+      doc: DemoScript
     }
   },
-  mounted () {
-  },
   methods: {
-    onSubmit (fields) {
-      this.doc.script.push(fields)
-      this.input.type = null
-    },
-    loadForm (fieldType) {
-      this.input.type = fieldType + '-form'
-    },
     editField (index) {
-      console.log('coming soon')
+      console.log('editing function coming soon!', this.doc.script[index])
     }
   }
 }
