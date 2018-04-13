@@ -16,7 +16,7 @@
       }
     },
     {
-      "element": "scene-transition",
+      "element": "transition",
       "fields": {
         "transition": "Dissolve to"
       }

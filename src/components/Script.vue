@@ -12,7 +12,7 @@
         <div class="container">
           <h1 class="title">Screenwriter</h1>
           <h2 class="subtitle">A bad hombre project</h2>
-          <element-form></element-form>
+          <element-form @payload="payload"></element-form>
         </div>
       </div>
     </section>
@@ -40,6 +40,9 @@ export default {
   methods: {
     editField (index) {
       console.log('editing function coming soon!', this.doc.script[index])
+    },
+    payload (fieldset) {
+      this.doc.script.push(fieldset)
     }
   }
 }
