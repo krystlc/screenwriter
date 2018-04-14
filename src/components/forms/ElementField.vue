@@ -6,6 +6,7 @@
         :value="value"
         :placeholder="config.label"
         :required="config.isRequired"
+        :autofocus="focus"
         @input="updateField"
         ref="textInput"
       ></textarea>
@@ -17,6 +18,7 @@
         :value="value"
         :placeholder="config.label"
         :required="config.isRequired"
+        :autofocus="focus"
         @input="updateField"
         ref="textInput"
       >
@@ -26,7 +28,7 @@
 
 <script>
 export default {
-  props: ['config', 'value'],
+  props: ['config', 'value', 'focus'],
   methods: {
     updateField () {
       this.$emit('input', this.$refs.textInput.value)

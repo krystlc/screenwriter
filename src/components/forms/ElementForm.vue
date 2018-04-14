@@ -32,9 +32,10 @@
         <element-field :config="{label: 'transition', isRequired: true}" v-model="fields.transition"></element-field>
       </div>
     </template>
-    <div class="field">
+    <div class="field" v-if="displayForm">
       <div class="control">
-        <button class="button is-primary" v-if="displayForm">ctrl+enter</button>
+        <button class="button is-primary">ctrl+enter</button>
+        <button class="button" disabled="disabled" v-shortkey.once="['ctrl','space']" @shortkey="test">focus</button>
       </div>
     </div>
   </form>
@@ -44,30 +45,30 @@
 import ElementField from './ElementField'
 
 const forms = ['slugline', 'action', 'dialogue', 'transition']
-const fields = {
-  position: '',
-  location: '',
-  time: '',
-  content: '',
-  character: '',
-  extention: '',
-  paranthetical: '',
-  transition: ''
-}
 
 export default {
   components: { ElementField },
   data () {
     return {
       forms,
-      fields,
-      displayForm: ''
+      fields: {
+        position: '',
+        location: '',
+        time: '',
+        content: '',
+        character: '',
+        extention: '',
+        paranthetical: '',
+        transition: ''
+      },
+      displayForm: '',
+      focus: ''
     }
   },
   methods: {
     loadForm (form) {
-      this.displayForm = form
       this.clearForm()
+      this.displayForm = form
     },
     clearForm () {
       const fields = this.fields
@@ -89,9 +90,11 @@ export default {
       }
       Object.keys(fielset.fields).forEach((key) => (fielset.fields[key] === '') && delete fielset.fields[key])
       this.$emit('payload', fielset)
+      this.displayForm = ''
       this.clearForm()
     },
     test () {
+      this.focus = 'autofocus'
       console.log('wee')
     }
   }
