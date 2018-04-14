@@ -35,7 +35,6 @@
     <div class="field" v-if="displayForm">
       <div class="control">
         <button class="button is-primary">ctrl+enter</button>
-        <button class="button" disabled="disabled" v-shortkey.once="['ctrl','space']" @shortkey="test">focus</button>
       </div>
     </div>
   </form>
@@ -61,8 +60,7 @@ export default {
         paranthetical: '',
         transition: ''
       },
-      displayForm: '',
-      focus: ''
+      displayForm: ''
     }
   },
   methods: {
@@ -94,7 +92,6 @@ export default {
       this.clearForm()
     },
     test () {
-      this.focus = 'autofocus'
       console.log('wee')
     }
   }
