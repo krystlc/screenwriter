@@ -8,28 +8,28 @@
     <template v-if="displayForm === 'slugline'">
       <div class="field has-addons">
         <element-field :config="{label: 'position'}" v-model="fields.position"></element-field>
-        <element-field :config="{label: 'location', isExpanded: true}" v-model="fields.location"></element-field>
+        <element-field :config="{label: 'location', isExpanded: true, isRequired: true}" v-model="fields.location"></element-field>
         <element-field :config="{label: 'time'}" v-model="fields.time"></element-field>
       </div>
     </template>
     <template v-if="displayForm === 'action'">
       <div class="field">
-        <element-field :config="{label: 'action', tag: 'textarea'}" v-model="fields.content"></element-field>
+        <element-field :config="{label: 'action', tag: 'textarea', isRequired: true}" v-model="fields.content"></element-field>
       </div>
     </template>
     <template v-if="displayForm === 'dialogue'">
       <div class="field has-addons">
-        <element-field :config="{label: 'character', isExpanded: true}" v-model="fields.character"></element-field>
+        <element-field :config="{label: 'character', isExpanded: true, isRequired: true}" v-model="fields.character"></element-field>
         <element-field :config="{label: 'extention'}" v-model="fields.extention"></element-field>
         <element-field :config="{label: 'paranthetical'}" v-model="fields.paranthetical"></element-field>
       </div>
       <div class="field">
-        <element-field :config="{label: 'speech', tag: 'textarea'}" v-model="fields.content"></element-field>
+        <element-field :config="{label: 'speech', tag: 'textarea', isRequired: true}" v-model="fields.content"></element-field>
       </div>
     </template>
     <template v-if="displayForm === 'transition'">
       <div class="field">
-        <element-field :config="{label: 'transition'}" v-model="fields.transition"></element-field>
+        <element-field :config="{label: 'transition', isRequired: true}" v-model="fields.transition"></element-field>
       </div>
     </template>
     <div class="field">
@@ -90,6 +90,9 @@ export default {
       Object.keys(fielset.fields).forEach((key) => (fielset.fields[key] === '') && delete fielset.fields[key])
       this.$emit('payload', fielset)
       this.clearForm()
+    },
+    test () {
+      console.log('wee')
     }
   }
 }
